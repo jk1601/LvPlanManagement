@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/zhou_xuanze"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textSize="24sp"
+            android:textColor="#03A9F4"
+            android:text="第"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <org.angmarch.views.NiceSpinner
+            android:id="@+id/xueqi_nice_spinner"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学期"
+            android:textColor="#03A9F4"
+            android:textSize="24sp"></TextView>
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:textSize="24sp"
+            android:textColor="#03A9F4"
+            android:text="第"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <org.angmarch.views.NiceSpinner
+            android:id="@+id/zhou_nice_spinner"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="24sp"
+            android:textColor="#03A9F4"
+            android:text="周"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/zhou_xuanze"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:text="+"
+            android:textSize="29sp"
+            android:id="@+id/add_button_week"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_below="@+id/add_button_week"
+            android:id="@+id/recyclerview_week"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

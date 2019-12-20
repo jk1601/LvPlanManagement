@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">计划管理软件</string>
+    <string name="action_settings">Settings</string>
+    <string name="enter_title">输入计划</string>
+</resources>
