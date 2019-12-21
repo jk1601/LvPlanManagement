@@ -49,12 +49,7 @@ public class MainActivity extends AppCompatActivity {
         final View headerView = navigationView.inflateHeaderView(R.layout.nav_header);
         imageView = headerView.findViewById(R.id.img_photo);
 
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(headerView.getContext(),"ssss",Toast.LENGTH_SHORT).show();
-            }
-        });
+        imageView.setOnClickListener(view -> Toast.makeText(headerView.getContext(),"ssss",Toast.LENGTH_SHORT).show());
 
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new HomePage_Fragment());
@@ -66,51 +61,45 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
 
         //BottomNavigationView 点击事件监听
-        bnView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int menuId = menuItem.getItemId();
-                // 跳转指定页面：Fragment
-                switch (menuId) {
-                    case R.id.tab_one:
-                        viewPager.setCurrentItem(0);
-                        break;
-                    case R.id.tab_two:
-                        viewPager.setCurrentItem(1);
-                        break;
-                    case R.id.tab_three:
-                        viewPager.setCurrentItem(2);
-                        break;
+        bnView.setOnNavigationItemSelectedListener(menuItem -> {
+            int menuId = menuItem.getItemId();
+            // 跳转指定页面：Fragment
+            switch (menuId) {
+                case R.id.tab_one:
+                    viewPager.setCurrentItem(0);
+                    break;
+                case R.id.tab_two:
+                    viewPager.setCurrentItem(1);
+                    break;
+                case R.id.tab_three:
+                    viewPager.setCurrentItem(2);
+                    break;
 //                    case R.id.tab_four:
 //                        viewPager.setCurrentItem(3);
 //                        break;
-                }
-                return false;
             }
+            return false;
         });
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.id_1:
-                        try{
-                            System.out.println("111");
-                            Toast.makeText(headerView.getContext(),"111",Toast.LENGTH_SHORT).show();
-                            break;
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+        navigationView.setNavigationItemSelectedListener(menuItem -> {
+            switch (menuItem.getItemId()){
+                case R.id.id_1:
+                    try{
+                        System.out.println("111");
+                        Toast.makeText(headerView.getContext(),"111",Toast.LENGTH_SHORT).show();
+                        break;
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
-                        break;
-                    case R.id.id_2:
-                        Toast.makeText(headerView.getContext(),"222",Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.id_3:
-                        Toast.makeText(MainActivity.this,"333",Toast.LENGTH_SHORT).show();
-                        break;
-                }
-                return false;
+                    break;
+                case R.id.id_2:
+                    Toast.makeText(headerView.getContext(),"222",Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.id_3:
+                    Toast.makeText(MainActivity.this,"333",Toast.LENGTH_SHORT).show();
+                    break;
             }
+            return false;
         });
 
         // ViewPager 滑动事件监听
